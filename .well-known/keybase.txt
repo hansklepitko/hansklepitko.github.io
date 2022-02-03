@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/hansklepitko
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://hansklepitko.github.io
+  * I am hansklepitko (https://keybase.io/hansklepitko) on keybase.
+  * I have a public key ASAJsF_uzYBsvDjzD7i6SNwO-VWxO9p3mKgSazCSrFFRrwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200bdb1313096b7cc401390cce77c36a398641afb51e754d825cfc10592b9bff590a",
+      "host": "keybase.io",
+      "kid": "012009b05feecd806cbc38f30fb8ba48dc0ef955b13bda7798a8126b3092ac5151af0a",
+      "uid": "87ea4120df52df6b39d71c49d4850a19",
+      "username": "hansklepitko"
+    },
+    "merkle_root": {
+      "ctime": 1643871697,
+      "hash": "4a46d9eed25ed4f102ea1ecfa31e0509139f048e49a8fd67544410769acf6d14539ec4fd5ea5219ca07931fb1a2782c8a0ccbc80203b12689d79bf40afed887b",
+      "hash_meta": "5ad84023710a571c3f3c02183f9f3f5a58a3e201623d61ddb2aea8e19f04959b",
+      "seqno": 21785371
+    },
+    "service": {
+      "entropy": "F1yD4KGVu0Mcwv7WJlnhY9zF",
+      "hostname": "hansklepitko.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1643871754,
+  "expire_in": 504576000,
+  "prev": "10ccaf39cee7405f1fd8718827e39b22b958a7505860104f4402fb8bdb6770fe",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgCbBf7s2AbLw48w+4ukjcDvlVsTvad5ioEmswkqxRUa8Kp3BheWxvYWTESpcCDsQgEMyvOc7nQF8f2HGIJ+ObIrlYp1BYYBBPRAL7i9tncP7EIO5Sx4feMHEWrxlvqIIFPuqqk+QjGVt35ZK2SSfbDGSmAgHCo3NpZ8RAN6peV7kKKKExF28ujIk1TyAoog9K8nnSkkFRAwNtf6/EO1HmqMojUJpwZ6ihjU8kDDZ34wVQBhGgjpRUuhQ/BKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIF7DMxpN9AIxycyNdXYWeEzdaX6Wh9GbNtK1waZVxWQ7o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hansklepitko
+
+==================================================================
