@@ -16,7 +16,7 @@ permalink: /things-to-do-after-installing-debian-regular
 
 *ver. 22.02_regular Desktop Workstation (still more stable than Arch btw)*
 
-## 1. Installation medium:
+## Installation medium
 
 **Preferred:**
 [Debian 11.2 Gnome Live non-free](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.2.0-live+nonfree/amd64/iso-hybrid/debian-live-11.2.0-amd64-gnome+nonfree.iso):
@@ -25,28 +25,9 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 
 ---
 
-## 2. Initial configuration:
+## Initial configuration
 
-### Replace repositories to "sid"
-
-```
-sudo mv /etc/apt/source.list /etc/apt/source.list.old
-
-sudo nano /etc/apt/source.list
-```
-
-add following:
-
-```
-deb http://deb.debian.org/debian sid main contrib non-free
-# deb-src http://deb.debian.org/debian sid main
-```
-
-save the file and exit
-
----
-
-### Update the repositories:
+### Update the repositories
 
 ```
 sudo apt update
@@ -54,9 +35,9 @@ sudo apt update
 
 ---
 
-### Remove default LibreOffice installation (deb) before upgrading:
+### Remove default LibreOffice installation (deb) before upgrading
 
-*(we will install LibreOffice Flatpak at the later stage):*
+*(we will install LibreOffice Flatpak at the later stage)*
 
 ```
 sudo apt remove --purge libreoffice*
@@ -64,7 +45,7 @@ sudo apt remove --purge libreoffice*
 
 ---
 
-### Remove default games:
+### Remove default games
 
 ```
 sudo apt remove iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-2048 hitori gnome-klotski gnome-mines gnome-mahjongg gnome-sudoku quadrapassel swell-foop gnome-tetravex gnome-taquin aisleriot -y
@@ -80,7 +61,7 @@ sudo apt remove firefox-esr
 
 ---
 
-### Upgrade to Debian Sid
+### Upgrade to Debian
 
 ```
 sudo apt upgrade -y
@@ -124,9 +105,9 @@ sudo apt install gufw
 
 ---
 
-## 3. Additional software installation:
+## Additional software installation
 
-### Install essential apps:
+### Install essential apps
 
 ```
 sudo apt install wget git curl neofetch mc ncdu tmux inxi htop thunderbird audacious audacity gimp inkscape krita darktable -y
@@ -148,7 +129,7 @@ sudo apt install ./vivaldi-stable_5.0.2497.51-1_amd64.deb
 
 ---
 
-### Remove default games:
+### Remove default games
 
 ```
 sudo apt remove iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-2048 hitori gnome-klotski gnome-mines gnome-mahjongg gnome-sudoku quadrapassel swell-foop gnome-tetravex gnome-taquin aisleriot -y
@@ -156,7 +137,7 @@ sudo apt remove iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-20
 
 ---
 
-### Install Microsoft Base Fonts:
+### Install Microsoft Base Fonts
 
 for the basic Microsoft Font pack:
 
@@ -202,7 +183,7 @@ sudo apt install rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plug
 
 ---
 
-### Install Flatpak:
+### Install Flatpak
 
 ```
 sudo apt install flatpak
@@ -216,7 +197,7 @@ sudo reboot
 
 ---
 
-### Install LibreOffice flatpak version:
+### Install LibreOffice flatpak version
 
 ```
 flatpak install flathub org.libreoffice.LibreOffice
@@ -228,7 +209,7 @@ remember to change formats to Bulgarian in Language Settings
 
 ---
 
-### Automate flatpak updates:
+### Automate flatpak updates
 
 *(yes, without sudo)*
 
@@ -289,7 +270,7 @@ Now, Syncthing is accessible under http://localhost:8384 and in the local networ
 
 ---
 
-### Install NoMachine:
+### Install NoMachine
 
 *version from 2022-02-03*
 
@@ -327,7 +308,7 @@ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnom
 
 ---
 
-### Install AppImage Launcher:
+### Install AppImage Launcher
 
 ```
 wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
@@ -339,7 +320,7 @@ sudo apt install ./appimagelauncher_2.2.0-gha74.10c226a+bionic_amd64.deb
 
 ---
 
-### Install TOR:
+### Install TOR
 
 enable the usage of https in sources.list:
 
@@ -398,7 +379,7 @@ sudo apt install torbrowser-launcher
 
 ---
 
-### Install Wine and dependencies:
+### Install Wine and dependencies
 
 ```
 sudo dpkg --add-architecture i386
@@ -418,7 +399,7 @@ winecfg
 
 ---
 
-### Install "Bottles", a brand new wine manager:
+### Install "Bottles", a brand new wine manager
 
 ```
 flatpak install flathub com.usebottles.bottles
@@ -436,7 +417,7 @@ sudo apt install tlp
 
 ---
 
-### finishing up:
+### finishing up
 
 ```
 sudo apt autoremove
@@ -455,9 +436,9 @@ sudo apt autoclean
 
 ---
 
-## 4. Optionally:
+## Optionally
 
-### Add locale:
+### Add locale
 
 *preferably, do it before installing any apps*
 
@@ -481,7 +462,7 @@ Don't forget to change language, time and locale settings in the GUI system sett
 
 ---
 
-### Install tweaked Linux Kernel:
+### Install tweaked Linux Kernel
 
 ```
 curl 'https://liquorix.net/add-liquorix-repo.sh' | sudo bash
@@ -491,31 +472,65 @@ sudo apt install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 
 ---
 
-### Need some Apps?:
+### Need some Apps?
 
 ```
 flatpak install flathub net.cozic.joplin_desktop
 ```
 
+Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in Markdown format.
+
 ```
 flatpak install flathub org.telegram.desktop
 ```
 
-```
-flatpak install flathub com.spotify.Client
-```
+Pure instant messaging — simple, fast, secure, and synced across all your devices. One of the world's top 10 most downloaded apps with over 500 million active users.
 
 ```
-flatpak install flathub com.skype.Client
+flatpak install flathub io.freetubeapp.FreeTube
 ```
+
+FreeTube is an open source desktop YouTube player built with privacy in mind. Use YouTube without advertisements and prevent Google from tracking you with their cookies and JavaScript.
 
 ```
 flatpak install flathub com.stremio.Stremio
 ```
 
+Watch videos, movies, TV series and TV channels instantly.
+
+```
+flatpak install flathub org.onlyoffice.desktopeditors
+```
+
+Create, view and edit text documents, spreadsheets and presentations of any size and complexity. Work on documents of most popular formats: DOCX, ODT, XLSX, ODS, CSV, PPTX, ODP, etc. Deal with multiple files within one and the same window thanks to the tab-based user interface.
+
+```
+https://flathub.org/apps/details/com.belmoussaoui.Decoder
+```
+
+Decoder is a fancy yet simple QR Codes scanner and generator.
+
+```
+flatpak install flathub org.gnome.Solanum
+```
+
+Solanum is a time tracking app that uses the pomodoro technique. Work in 4 sessions, with breaks in between each session and one long break after all 4.
+
+```
+https://flathub.org/apps/details/fr.romainvigier.MetadataCleaner
+```
+
+Metadata Cleaner allows you to view metadata in your files and to get rid of it, as much as possible.
+
+```
+flatpak install flathub com.github.tchx84.Flatseal
+```
+
+Flatseal is a graphical utility to review and modify permissions from your Flatpak applications.
+
 ---
 
-### Install WebApp Manager and add any website as a standalone system App:
+### Install WebApp Manager and add any website as a standalone system App
 
 (working best with Chromium engine based web browsers)
 
@@ -531,7 +546,7 @@ sudo apt install ./webapp-manager_1.1.9_all.deb
 
 ---
 
-### Better Apperance:
+### Better Apperance
 
 ```
 sudo apt install git && git clone https://github.com/vinceliuice/Tela-icon-theme.git
@@ -549,7 +564,7 @@ sudo apt install materia-gtk-theme
 
 ---
 
-### Using legacy Nvidia Geforce GPU?:
+### Using legacy Nvidia Geforce GPU?
 
 ```
 sudo apt install nvidia-legacy-390xx-driver
