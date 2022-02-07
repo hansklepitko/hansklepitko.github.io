@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: Things to do after installing Debian - reckless
 nav_order: 100
@@ -194,7 +193,9 @@ sudo systemctl enable --now cups
 ---
 
 ### Install build-essential
+
 It’s a package that includes many dependencies commonly used by different apps so it’s always good to have it installed. We all need it sooner or later.
+
 ```
 sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
@@ -202,6 +203,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ---
 
 ### Install restricted-extras
+
 ```
 sudo apt install rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi
 ```
@@ -433,7 +435,9 @@ flatpak install flathub com.usebottles.bottles
 ---
 
 ### Extend the Battery Life
+
 If you have Debian installed on your laptop, you can squeeze more battery juice by installing tlp (power management tool).
+
 ```
 sudo apt install tlp
 ```
@@ -462,6 +466,7 @@ sudo apt autoclean
 ## 4. Optionally:
 
 ### Add locale:
+
 *preferably, do it before installing any apps*
 
 ```
@@ -471,6 +476,7 @@ sudo update-locale LANG=bg_BG.UTF-8
 
 sudo locale-gen
 ```
+
 *`bg_BG.UTF.8` used as an example*
 
 If, for some reason that method doesn't work, uncoment your locale from `/etc/locale.gen` and then:

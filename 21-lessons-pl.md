@@ -5,7 +5,7 @@ title: 21 Lessons PL
 has_children: false
 parent: Gigi's Translations
 grant_parent: Bonus
-permalink: /21-lessons-pl
+permalink: /21pl
 nav_order: 1
 
 ---
