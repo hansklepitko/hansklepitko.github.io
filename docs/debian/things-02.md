@@ -16,7 +16,7 @@ permalink: /things-to-do-after-installing-debian-reckless
 
 *ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
 
-<details open markdown="block">
+<details close markdown="block">
   <summary>
     Table of contents
   </summary>
