@@ -87,7 +87,7 @@ sudo apt remove iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-20
 ### Remove Firefox-ESR
 
 ```
-sudo apt remove firefox-esr
+sudo apt remove --purge firefox*
 ```
 
 ---

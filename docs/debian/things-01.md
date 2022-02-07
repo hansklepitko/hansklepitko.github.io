@@ -13,8 +13,19 @@ permalink: /things-to-do-after-installing-debian-regular
 2022-02-07 14:54
 
 # Things to do after installing Debian - regular
+{: .no_toc }
 
+<details close markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 *ver. 22.02_regular Desktop Workstation (still more stable than Arch btw)*
+
+---
 
 ## Installation medium
 
@@ -26,6 +37,20 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 ---
 
 ## Initial configuration
+
+### Add backports repository
+```
+sudo nano /etc/apt/sources.list.d/debian-backports.list
+```
+Add following:
+```
+# bullseye backports
+deb http://ftp.debian.org/debian bullseye-backports main contrib non-free
+deb-src http://ftp.debian.org/debian stretch-backports main
+```
+Save the file and exit
+
+---
 
 ### Update the repositories
 
@@ -56,12 +81,12 @@ sudo apt remove iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-20
 ### Remove Firefox-ESR
 
 ```
-sudo apt remove firefox-esr
+sudo apt remove --purge firefox*
 ```
 
 ---
 
-### Upgrade to Debian
+### Upgrade the system
 
 ```
 sudo apt upgrade -y
