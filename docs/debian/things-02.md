@@ -13,6 +13,8 @@ permalink: /things-to-do-after-installing-debian-reckless
 2022-02-07 16:30
 
 # Things to do after installing Debian - reckless
+{: .no_toc }
+
 <details close markdown="block">
   <summary>
     Table of contents
