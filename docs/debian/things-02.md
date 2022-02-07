@@ -26,7 +26,7 @@ permalink: /things-to-do-after-installing-debian-reckless
 </details>
 ---
 
-## 1. Installation medium:
+## Installation medium
 
 **Preferred:**
 [Debian 11.2 Gnome Live non-free](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.2.0-live+nonfree/amd64/iso-hybrid/debian-live-11.2.0-amd64-gnome+nonfree.iso):
@@ -35,7 +35,7 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 
 ---
 
-## 2. Initial configuration
+## Initial configuration
 
 ### Replace repositories to "sid"
 
@@ -134,7 +134,7 @@ sudo apt install gufw
 
 ---
 
-## 3. Additional software installation
+## Additional software installation
 
 ### Install essential apps
 
@@ -463,7 +463,7 @@ sudo apt autoclean
 
 ---
 
-## 4. Optionally
+## Optionally
 
 ### Add locale
 
