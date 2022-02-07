@@ -13,9 +13,6 @@ permalink: /things-to-do-after-installing-debian-reckless
 2022-02-07 16:30
 
 # Things to do after installing Debian - reckless
-
-*ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
-
 <details close markdown="block">
   <summary>
     Table of contents
@@ -24,6 +21,9 @@ permalink: /things-to-do-after-installing-debian-reckless
 1. TOC
 {:toc}
 </details>
+
+*ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
+
 ---
 
 ## Installation medium
