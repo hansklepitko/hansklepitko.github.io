@@ -2,7 +2,7 @@
 
 layout: default
 title: Gigi's Translations
-nav_order: 900
+nav_order: 901
 has_children: true
 parent: Bonus
 permalink: /gigi
