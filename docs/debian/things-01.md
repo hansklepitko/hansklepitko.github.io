@@ -1,6 +1,6 @@
 ---
 layout: default
-title: After installing Debian - regular
+title: After installing - regular
 nav_order: 101
 has_children: false
 parent: Debian
@@ -12,7 +12,7 @@ permalink: /things-to-do-after-installing-debian-regular
 
 2022-02-07 14:54
 
-# Things to do after installing Debian
+# Things to do after installing Debian - regular
 
 *ver. 22.02_regular Desktop Workstation (still more stable than Arch btw)*
 
