@@ -4,15 +4,15 @@ layout: default
 title: Things to do after installing Debian - reckless
 nav_order: 100
 has_children: false
+parent: Debian
 permalink: /things-to-do-after-installing-debian-reckless
 
 ---
+![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
 
 2022-02-03 22:54
 # Things to do after installing Debian 
 *ver. 22.02_reckless (still more stable than Arch btw)*
-
-![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
 
 ## 1. Installation medium:
 **Preferred:**
@@ -29,9 +29,9 @@ sudo mv /etc/apt/source.list /etc/apt/source.list.old
 sudo nano /etc/apt/source.list
 ```
 add following:
-```yaml
+```
 deb http://deb.debian.org/debian sid main contrib non-free
-deb-src http://deb.debian.org/debian sid main contrib non-free
+# deb-src http://deb.debian.org/debian sid main contrib non-free
 ```
 save the file and exit
 
@@ -84,13 +84,18 @@ sudo apt install openssh-server -y
 ### Install and configure Uncomplicated Firewall (ufw)
 ```
 sudo apt install ufw
+
 sudo ufw enable
+
 sudo ufw default deny incoming
+
 sudo ufw default allow outgoing
+
 sudo ufw allow ssh
+
 sudo apt install gufw
 ```
-*for more configuration options visit: [](https://wiki.debian.org/Uncomplicated%20Firewall%20(ufw))
+*for more configuration options visit: [Debian Wiki](https://wiki.debian.org/Uncomplicated%20Firewall%20(ufw))
 
 ---
 ## 3. Additional software installation:
@@ -107,7 +112,8 @@ wget https://downloads.vivaldi.com/stable/vivaldi-stable_5.0.2497.51-1_amd64.deb
 
 sudo apt install ./vivaldi-stable_5.0.2497.51-1_amd64.deb
 ```
-...also consider switching to [Brave Search Engine](https://search.brave.com/default).
+*...also, consider switching to [Brave Search Engine](https://search.brave.com/default)*.
+*Here is why: [https://search.brave.com/help/independence](https://search.brave.com/help/independence)*
 
 ---
 ### Remove default games:
@@ -127,7 +133,7 @@ Create `.fonts` folder in your home directory and unpack there your downloaded f
 
 ---
 ### Make sure printer support is installed
-```yaml
+```
 sudo apt install skanlite cups cups-client cups-filters hplip printer-driver-hpijs
 
 sudo adduser [USERNAME] lpadmin
@@ -404,8 +410,8 @@ sudo apt install nvidia-legacy-390xx-driver
 ---
 ---
 *Reference:*
-[](https://wiki.debian.org)
-[](https://packages.debian.org/bookworm/nvidia-legacy-390xx-driver)
-[](https://www.linuxcapable.com/debian/)
+[https://wiki.debian.org](https://wiki.debian.org)
+[https://packages.debian.org/bookworm/nvidia-legacy-390xx-driver](https://packages.debian.org/bookworm/nvidia-legacy-390xx-driver)
+[https://www.linuxcapable.com/debian](https://www.linuxcapable.com/debian/)
 *Don't break your Debian!*
-[](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)
+[https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)
