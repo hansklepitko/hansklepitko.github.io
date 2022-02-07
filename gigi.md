@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: Gigi Translations
+title: Gigi's Translations
 nav_order: 900
 has_children: true
 parent: Bonus
