@@ -15,7 +15,7 @@ permalink: /things-to-do-after-installing-debian-reckless
 
 # Things to do after installing Debian
 
-*ver. 22.02_reckless (still more stable than Arch btw)*
+*ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
 
 ## 1. Installation medium:
 
@@ -40,7 +40,7 @@ add following:
 
 ```
 deb http://deb.debian.org/debian sid main contrib non-free
-# deb-src http://deb.debian.org/debian sid main contrib non-free
+# deb-src http://deb.debian.org/debian sid main
 ```
 
 save the file and exit
@@ -454,8 +454,7 @@ sudo apt autoclean
 ## 4. Optionally:
 
 ### Add locale:
-
-*do it before installing any apps*
+*preferably, do it before installing any apps*
 
 ```
 sudo locale-gen bg_BG.UTF.8
@@ -464,8 +463,9 @@ sudo update-locale LANG=bg_BG.UTF-8
 
 sudo locale-gen
 ```
+*`bg_BG.UTF.8` used as an example*
 
-If for some reason that method doesn't work, uncoment your locale from `/etc/locale.gen`  and then:
+If, for some reason that method doesn't work, uncoment your locale from `/etc/locale.gen` and then:
 
 ```
 sudo locale-gen
@@ -559,8 +559,13 @@ sudo apt install nvidia-legacy-390xx-driver
 ---
 
 *Reference:*
+
 [https://wiki.debian.org](https://wiki.debian.org)
+
 [https://packages.debian.org/bookworm/nvidia-legacy-390xx-driver](https://packages.debian.org/bookworm/nvidia-legacy-390xx-driver)
+
 [https://www.linuxcapable.com/debian](https://www.linuxcapable.com/debian/)
+
 *Don't break your Debian!*
+
 [https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)
