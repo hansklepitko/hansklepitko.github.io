@@ -13,6 +13,7 @@ permalink: /things-to-do-after-installing-debian-regular
 2022-02-07 14:54
 
 # Things to do after installing Debian - regular
+
 {: .no_toc }
 
 <details close markdown="block">
@@ -39,15 +40,19 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 ## Initial configuration
 
 ### Add backports repository
+
 ```
 sudo nano /etc/apt/sources.list.d/debian-backports.list
 ```
+
 Add following:
+
 ```
 # bullseye backports
 deb http://ftp.debian.org/debian bullseye-backports main contrib non-free
 deb-src http://ftp.debian.org/debian stretch-backports main
 ```
+
 Save the file and exit
 
 ---
@@ -186,7 +191,7 @@ sudo adduser [USERNAME] lpadmin
 sudo systemctl enable --now cups
 ```
 
-*Replace [USERNAME] with your user name*
+*Replace [USERNAME] with your username*
 
 ---
 
@@ -244,7 +249,7 @@ crontab -e
 
 add the line on the end:
 `15 12 * * * flatpak update -y > /home/[USERNAME]/Documents/logs/flatpak-update.log`
-*Replace [USERNAME] with your user name*
+*Replace [USERNAME] with your username*
 (the log destination is custom, the directory must exsist)
 
 ### Install Syncthing
@@ -277,7 +282,7 @@ Enable syncthing at system boot:
 sudo systemctle enable --now syncthing@[USERNAME].service
 ```
 
-*Replace [USERNAME] with your user name*
+*Replace [USERNAME] with your username*
 
 Edit line 59 in `config.xml` file, and replace `127.0.0.1` with `0.0.0.0`
 
@@ -289,7 +294,7 @@ nano /home/viking/.config/syncthing/config.xml
 sudo systemctl restart syncthing@[USERNAME].service
 ```
 
-*Replace [USERNAME] with your user name*
+*Replace [USERNAME] with your username*
 
 Now, Syncthing is accessible under http://localhost:8384 and in the local network.
 
@@ -599,8 +604,6 @@ sudo apt install nvidia-legacy-390xx-driver
 \
 \
 .
-
----
 
 ---
 

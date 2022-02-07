@@ -1,19 +1,20 @@
 ---
 layout: default
-title: After installing - reckless
-nav_order: 102
+title: After installing - grandma
+nav_order: 103
 has_children: false
 parent: Debian
-permalink: /things-to-do-after-installing-debian-reckless
+permalink: /things-to-do-after-installing-debian-grandma
 
 ---
 
 ![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
 
-2022-02-07 16:30
+2022-02-07 14:54
 
-# Things to do after installing Debian - reckless
+# Things to do after installing Debian - for your grandma
 {: .no_toc }
+*ver. 22.02_grandma Desktop Workstation*
 
 <details close markdown="block">
   <summary>
@@ -23,8 +24,6 @@ permalink: /things-to-do-after-installing-debian-reckless
 1. TOC
 {:toc}
 </details>
-
-*ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
 
 ---
 
@@ -38,33 +37,6 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 ---
 
 ## Initial configuration
-
-### Replace repositories to "sid"
-
-```
-sudo mv /etc/apt/source.list /etc/apt/source.list.old
-
-sudo nano /etc/apt/source.list
-```
-
-add following:
-
-```
-deb http://deb.debian.org/debian sid main contrib non-free
-#deb-src http://deb.debian.org/debian sid main
-```
-
-save the file and exit
-
----
-
-### Update the repositories
-
-```
-sudo apt update
-```
-
----
 
 ### Remove default LibreOffice installation (deb) before upgrading
 
@@ -92,9 +64,11 @@ sudo apt remove --purge firefox*
 
 ---
 
-### Upgrade to Debian Sid
+### Upgrade the system
 
 ```
+sudo apt update
+
 sudo apt upgrade -y
 
 sudo apt dist-upgrade -y
@@ -107,6 +81,14 @@ sudo apt autoremove && sudo apt autoclean
 ```
 
 ---
+
+### Create a user for your granny
+You are creating user without `sudo` rights
+```
+sudo adduser [USERNAME]
+```
+*Replace [USERNAME] with your granny's username*
+
 
 ### Install SSH
 
@@ -251,7 +233,7 @@ crontab -e
 add the line on the end:
 `15 12 * * * flatpak update -y > /home/[USERNAME]/Documents/logs/flatpak-update.log`
 *Replace [USERNAME] with your username*
-(the log destination is custom, the directory must exsist)
+*(the log destination is custom, the directory must exsist)*
 
 ### Install Syncthing
 
@@ -430,7 +412,7 @@ winecfg
 
 ---
 
-### Install "Bottles"
+### Install "Bottles", a brand new wine manager
 
 ```
 flatpak install flathub com.usebottles.bottles
@@ -462,6 +444,8 @@ sudo apt autoclean
 \
 \
 .
+
+---
 
 ---
 
