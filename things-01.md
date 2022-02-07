@@ -8,6 +8,14 @@ parent: Debian
 permalink: /things-to-do-after-installing-debian-reckless
 
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
 
