@@ -1,20 +1,18 @@
 ---
 layout: default
-title: After installing - regular
-nav_order: 101
+title: Grandma
+nav_order: 223
 has_children: false
-parent: Debian
-permalink: /things-to-do-after-installing-debian-regular
+parent: After Installing
+grand_parent: Debian
+permalink: /things-to-do-after-installing-debian-grandma
 
 ---
-
-![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
-
 2022-02-07 14:54
 
-# Things to do after installing Debian - regular
-
+# Things to do after installing Debian - for your grandma
 {: .no_toc }
+*ver. 22.02_grandma Desktop Workstation*
 
 <details close markdown="block">
   <summary>
@@ -24,9 +22,13 @@ permalink: /things-to-do-after-installing-debian-regular
 1. TOC
 {:toc}
 </details>
-*ver. 22.02_regular Desktop Workstation (still more stable than Arch btw)*
 
 ---
+
+## Introduction
+
+--- writing --- writing --- writing ---
+
 
 ## Installation medium
 
@@ -38,32 +40,6 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 ---
 
 ## Initial configuration
-
-### Add backports repository
-
-```
-sudo nano /etc/apt/sources.list.d/debian-backports.list
-```
-
-Add following:
-
-```
-# bullseye backports
-deb http://ftp.debian.org/debian bullseye-backports main contrib non-free
-deb-src http://ftp.debian.org/debian stretch-backports main
-```
-
-Save the file and exit
-
----
-
-### Update the repositories
-
-```
-sudo apt update
-```
-
----
 
 ### Remove default LibreOffice installation (deb) before upgrading
 
@@ -94,6 +70,8 @@ sudo apt remove --purge firefox*
 ### Upgrade the system
 
 ```
+sudo apt update
+
 sudo apt upgrade -y
 
 sudo apt dist-upgrade -y
@@ -106,6 +84,16 @@ sudo apt autoremove && sudo apt autoclean
 ```
 
 ---
+
+### Create a user for your granny
+
+You are creating user without `sudo` rights
+
+```
+sudo adduser [USERNAME]
+```
+
+*Replace [USERNAME] with your granny's username*
 
 ### Install SSH
 
@@ -250,7 +238,7 @@ crontab -e
 add the line on the end:
 `15 12 * * * flatpak update -y > /home/[USERNAME]/Documents/logs/flatpak-update.log`
 *Replace [USERNAME] with your username*
-(the log destination is custom, the directory must exsist)
+*(the log destination is custom, the directory must exsist)*
 
 ### Install Syncthing
 

@@ -1,19 +1,19 @@
 ---
 layout: default
-title: After installing - reckless
-nav_order: 102
+title: Regular
+nav_order: 221
 has_children: false
-parent: Debian
-permalink: /things-to-do-after-installing-debian-reckless
+parent: After Installing
+grand_parent: Debian
+permalink: /things-to-do-after-installing-debian-regular
 
 ---
 
-![Debian](https://www.debian.org/Pics/debian-logo-1024x576.png)
+2022-02-07 14:54
 
-2022-02-07 16:30
-
-# Things to do after installing Debian - reckless
+# Things to do after installing Debian - regular
 {: .no_toc }
+*ver. 22.02_regular Desktop Workstation*
 
 <details close markdown="block">
   <summary>
@@ -24,7 +24,11 @@ permalink: /things-to-do-after-installing-debian-reckless
 {:toc}
 </details>
 
-*ver. 22.02_reckless Desktop Workstation (still more stable than Arch btw)*
+---
+
+## Introduction
+
+--- writing --- writing --- writing ---
 
 ---
 
@@ -39,22 +43,21 @@ Download and flash the .iso image to USB thumb-drive, using Ventoy or Etcher and
 
 ## Initial configuration
 
-### Replace repositories to "sid"
+### Add backports repository
 
 ```
-sudo mv /etc/apt/source.list /etc/apt/source.list.old
-
-sudo nano /etc/apt/source.list
+sudo nano /etc/apt/sources.list.d/debian-backports.list
 ```
 
-add following:
+Add following:
 
 ```
-deb http://deb.debian.org/debian sid main contrib non-free
-#deb-src http://deb.debian.org/debian sid main
+# bullseye backports
+deb http://ftp.debian.org/debian bullseye-backports main contrib non-free
+deb-src http://ftp.debian.org/debian stretch-backports main
 ```
 
-save the file and exit
+Save the file and exit
 
 ---
 
@@ -92,7 +95,7 @@ sudo apt remove --purge firefox*
 
 ---
 
-### Upgrade to Debian Sid
+### Upgrade the system
 
 ```
 sudo apt upgrade -y
@@ -176,7 +179,7 @@ for the basic Microsoft Font pack:
 sudo apt install -y ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea
 ```
 
-...or, if you have an access to Windows OS you can copy `C:\Windows\Fonts' directory for the **full** *Windows 10* default fonts directory, download following:
+...or, if you have an access to Windows OS you can copy `C:\Windows\Fonts` directory for the **full** *Windows 10* default fonts directory, download following:
 [Windows 10 Font Pack](https://pixeldrain.com/u/DJYYa8E9).
 Create `.fonts` directory in your home location and copy your Windows fonts. 
 
@@ -430,7 +433,7 @@ winecfg
 
 ---
 
-### Install "Bottles"
+### Install "Bottles", a brand new wine manager
 
 ```
 flatpak install flathub com.usebottles.bottles
@@ -465,146 +468,6 @@ sudo apt autoclean
 
 ---
 
-## Optionally
-
-### Add locale
-
-*preferably, do it before installing any apps*
-
-```
-sudo locale-gen bg_BG.UTF.8
-
-sudo update-locale LANG=bg_BG.UTF-8
-
-sudo locale-gen
-```
-
-*`bg_BG.UTF.8` used as an example*
-
-If, for some reason that method doesn't work, uncoment your locale from `/etc/locale.gen` and then:
-
-```
-sudo locale-gen
-```
-
-Don't forget to change language, time and locale settings in the GUI system settings + **add BG keyboard layout**
-
----
-
-### Install tweaked Linux Kernel
-
-```
-curl 'https://liquorix.net/add-liquorix-repo.sh' | sudo bash
-
-sudo apt install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
-```
-
----
-
-### Need some Apps?
-
-```
-flatpak install flathub net.cozic.joplin_desktop
-```
-
-Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in Markdown format.
-
-```
-flatpak install flathub org.telegram.desktop
-```
-
-Pure instant messaging — simple, fast, secure, and synced across all your devices. One of the world's top 10 most downloaded apps with over 500 million active users.
-
-```
-flatpak install flathub io.freetubeapp.FreeTube
-```
-
-FreeTube is an open source desktop YouTube player built with privacy in mind. Use YouTube without advertisements and prevent Google from tracking you with their cookies and JavaScript.
-
-```
-flatpak install flathub com.stremio.Stremio
-```
-
-Watch videos, movies, TV series and TV channels instantly.
-
-```
-flatpak install flathub org.onlyoffice.desktopeditors
-```
-
-Create, view and edit text documents, spreadsheets and presentations of any size and complexity. Work on documents of most popular formats: DOCX, ODT, XLSX, ODS, CSV, PPTX, ODP, etc. Deal with multiple files within one and the same window thanks to the tab-based user interface.
-
-```
-https://flathub.org/apps/details/com.belmoussaoui.Decoder
-```
-
-Decoder is a fancy yet simple QR Codes scanner and generator.
-
-```
-flatpak install flathub org.gnome.Solanum
-```
-
-Solanum is a time tracking app that uses the pomodoro technique. Work in 4 sessions, with breaks in between each session and one long break after all 4.
-
-```
-https://flathub.org/apps/details/fr.romainvigier.MetadataCleaner
-```
-
-Metadata Cleaner allows you to view metadata in your files and to get rid of it, as much as possible.
-
-```
-flatpak install flathub com.github.tchx84.Flatseal
-```
-
-Flatseal is a graphical utility to review and modify permissions from your Flatpak applications.
-
----
-
-### Install WebApp Manager and add any website as a standalone system App
-
-(working best with Chromium engine based web browsers)
-
-```
-wget http://packages.linuxmint.com/pool/main/w/webapp-manager/webapp-manager_1.1.9_all.deb
-
-sudo apt install python3-pip
-
-pip install pillow
-
-sudo apt install ./webapp-manager_1.1.9_all.deb
-```
-
----
-
-### Better Apperance
-
-```
-sudo apt install git && git clone https://github.com/vinceliuice/Tela-icon-theme.git
-
-cd Tela-icon-theme
-
-sudo ./install.sh -a
-```
-
-```
-sudo apt install materia-gtk-theme
-```
-
-...and apply those changes in Gnome Tweaks 
-
----
-
-### Using legacy Nvidia Geforce GPU?
-
-```
-sudo apt install nvidia-legacy-390xx-driver
-```
-
-\
-\
-\
-.
-
----
 
 *Reference:*
 
