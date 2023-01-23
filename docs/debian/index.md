@@ -2,7 +2,7 @@
 
 layout: default
 title: Debian
-nav_order: 200
+nav_order: 2
 has_children: true
 permalink: /debian
 

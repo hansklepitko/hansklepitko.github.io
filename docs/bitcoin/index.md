@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: Bitcoin
-nav_order: 100
+nav_order: 2
 has_children: true
 permalink: /bitcoin
 
