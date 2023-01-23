@@ -4,7 +4,7 @@
 >
 > *― Aristotle* 
 
-### Welcome to my journal-documentation!
+## Welcome to my journal-documentation!
 
 Hey, Hans Klepitko here. I am an IT professional and a passionate technology junkie. 
 
