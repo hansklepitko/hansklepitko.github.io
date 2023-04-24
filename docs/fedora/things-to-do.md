@@ -9,7 +9,7 @@ permalink: /fedora/things-to-do
 
 # Things to do after installing Fedora 38 Workstation
 
-_2023-04-24 | private version - unfinished_
+_2023-04-24 private version - unfinished_
 
 _A brief tutorial on configuring a secure and reliable operating system._
 
@@ -26,51 +26,51 @@ After installing Fedora, remember to enable third-party repositories on first bo
 
 The first step is to open the dnf configuration using the following command:
 
-```text-plain
+```bash
 sudo nano /etc/dnf/dnf.conf
 ```
 
 To enable parallel downloads in DNF, add the following line to the bottom of your /etc/dnf/dnf.conf file:
 
-```text-plain
+```bash
 max_parallel_downloads=10
 ```
 
 Add the following to configure fastest mirror:
 
-```text-plain
+```bash
 fastestmirror=True
 deltarpm=True
 ```
 
 The good idea is to run a DNF upgrade, and you will notice first the DNF package manager is now determining the fastest mirrors in the output. Additionally, to ensure you have the latest packages after the fresh installation, run the following command in your terminal:
 
-```text-plain
+```bash
 sudo dnf upgrade --refresh
 ```
 
 After the **first** upgrade, it's a good idea to reboot your PC:
 
-```text-plain
+```bash
 sudo reboot
 ```
 
 **Enable the DNF autoupdate**
 -----------------------------
 
-```text-plain
+```bash
 sudo dnf install dnf-automatic -y
 ```
 
 Default configuration only downloads, but do not apply any of the packages. In order to change or add any configurations, open the .conf file as the root user (or using sudo) from a terminal window.
 
-```text-plain
+```bash
 sudo nano /etc/dnf/automatic.conf
 ```
 
 once you are ready with a configuration, enable the autorun:
 
-```text-plain
+```bash
 sudo systemctl enable --now dnf-automatic.timer
 ```
 
@@ -79,13 +79,13 @@ sudo systemctl enable --now dnf-automatic.timer
 
 To lower the Systemd waiting timeout, edit the following configuration file:
 
-```text-plain
+```bash
 sudo nano /etc/systemd/system.conf
 ```
 
 change the value in seconds to `15s`:
 
-```text-plain
+```bash
 DefaultTimeoutStartSec=15s
 DefaultTimeoutStopSec=15s
 ```
@@ -93,14 +93,14 @@ DefaultTimeoutStopSec=15s
 **Enable the RPM Fusion repositories**
 --------------------------------------
 
-```text-plain
+```bash
 sudo dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 ```
 
 Optionally, enable the Nonfree repository:
 
-```text-plain
+```bash
 sudo dnf install \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
@@ -109,7 +109,7 @@ The first time you attempt to install packages from these repositories, the dnf 
 
 Enable the Appstream data for the RPM Fusion:
 
-```text-plain
+```bash
 sudo dnf group update core
 ```
 
@@ -118,7 +118,7 @@ sudo dnf group update core
 
 Here are some essential apps that I use on a daily basis. You can research them online and decide whether to install them with DNF, via Flatpak, or not at all. Alternatively, you can trust me and execute the command as is. Please note that while the Fedora RPM repo may be slightly behind Flathub, the packages such as GIMP and Inkscape are often more lightweight from RPM. Ultimately, the choice is up to you.
 
-```text-plain
+```bash
 sudo dnf install mc bpytop inxi ncdu neofetch cmatrix gnome-tweaks syncthing qbittorrent thunderbird keepassxc gimp inkscape -y
 ```
 
@@ -128,7 +128,7 @@ Syncthing is a free and open-source file synchronization program that allows use
 
 It is important to enable Syncthing to run as a service so that it starts automatically when the system boots up, and continues to run even when the user is not logged in. This ensures that files remain in sync at all times, without requiring manual intervention.
 
-```text-plain
+```bash
 sudo systemctl enable --now syncthing@[user].service
 ```
 
@@ -142,19 +142,19 @@ LibreOffice is a free and open-source office suite that provides a range of tool
 
 Remove .rpm instances to avoid mess and conflicts
 
-```text-plain
+```bash
 sudo dnf remove libreoffice*
 ```
 
 Installing LibreOffice via Flathub means that you will always have the latest release of the software available.
 
-```text-plain
+```bash
 flatpak install flathub org.libreoffice.LibreOffice
 ```
 
 Reinstall the module for locale and language aids to work properly with LibreOffice
 
-```text-plain
+```bash
 flatpak install --reinstall org.freedesktop.Platform.Locale
 ```
 
@@ -170,7 +170,7 @@ Take a moment to review which apps you would like to install.
 
 The Extension Manager is a tool for managing GNOME Shell extensions, allowing users to customize the appearance and functionality of their desktop environment.
 
-```text-plain
+```bash
 flatpak install flathub com.mattjakeman.ExtensionManager
 ```
 
@@ -178,7 +178,7 @@ flatpak install flathub com.mattjakeman.ExtensionManager
 
 Telegram Desktop is a fast and secure messaging app that enables users to send text messages, make voice and video calls, and share files with other Telegram users. The app supports end-to-end encryption for added security and offers a range of features, including chat groups, channels, and bots.
 
-```text-plain
+```bash
 flatpak install flathub org.telegram.desktop
 ```
 
@@ -186,7 +186,7 @@ flatpak install flathub org.telegram.desktop
 
 Joplin is a free, open-source note-taking app with end-to-end encryption. It supports Markdown formatting, file attachments, and tagging, and is available on Windows, macOS, Linux, and mobile devices.
 
-```text-plain
+```bash
 flatpak install flathub net.cozic.joplin_desktop
 ```
 
@@ -196,7 +196,7 @@ _Looking for an alternative? Check_ [_Notesnook_](https://beta.flathub.org/apps/
 
 OnlyOffice Desktop is a free and open-source office suite that provides a range of tools for document editing, spreadsheet management, and presentation creation. The program offers full compatibility with Microsoft Office formats, making it a popular alternative for users who want to avoid the cost of proprietary software.
 
-```text-plain
+```bash
 flatpak install flathub org.onlyoffice.desktopeditors
 ```
 
@@ -204,7 +204,7 @@ flatpak install flathub org.onlyoffice.desktopeditors
 
 Bottles is a free and open-source application that allows users to run Windows software on Linux and macOS operating systems. It does this by creating a virtual environment where Windows programs can be installed and run without the need for a full Windows installation.
 
-```text-plain
+```bash
 flatpak install flathub com.usebottles.bottles
 ```
 
@@ -212,7 +212,7 @@ flatpak install flathub com.usebottles.bottles
 
 Pika Backup is an open-source backup utility that allows users to easily create and manage backups of their files and directories.
 
-```text-plain
+```bash
 flatpak install flathub org.gnome.World.PikaBackup
 ```
 
@@ -220,7 +220,7 @@ flatpak install flathub org.gnome.World.PikaBackup
 
 A Community-led hyper-hackable text editor. Pulsar aims to not only reach feature parity with the original Atom, but to bring Pulsar into the 21st century by updating the underlying architecture, and supporting modern features.
 
-```text-plain
+```bash
 flatpak install flathub dev.pulsar_edit.Pulsar
 ```
 
@@ -228,7 +228,7 @@ flatpak install flathub dev.pulsar_edit.Pulsar
 
 Remmina is a free and open-source remote desktop client for Linux that allows users to connect to and control remote computers from a local system.
 
-```text-plain
+```bash
 flatpak install flathub org.remmina.Remmina
 ```
 
@@ -236,7 +236,7 @@ flatpak install flathub org.remmina.Remmina
 
 FreeTube is a privacy-focused YouTube client for desktop that allows users to watch and download YouTube videos without ads or tracking.
 
-```text-plain
+```bash
 flatpak install flathub io.freetubeapp.FreeTube
 ```
 
@@ -244,7 +244,7 @@ flatpak install flathub io.freetubeapp.FreeTube
 
 OnionShare is a free, open-source tool that allows users to securely and anonymously share files or host websites over the Tor network. By creating a temporary, encrypted Tor hidden service, OnionShare enables the sender and recipient to bypass traditional methods of file sharing, such as email attachments or cloud-based services, ensuring privacy and security.
 
-```text-plain
+```bash
 flatpak install flathub org.onionshare.OnionShare
 ```
 
@@ -255,11 +255,11 @@ Integrate AppImages to your application launcher with one click, and manage, upd
 
 AppImageLauncher plays well with other applications managing AppImages, for example app stores. However, it doesn't depend on any of those, and can run completely standalone.
 
-```text-plain
+```bash
 https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
 ```
 
-```text-plain
+```bash
 sudo dnf install ./appimagelauncher-travis995.0f91801.x86_64.rpm
 ```
 
@@ -277,7 +277,7 @@ Check out the various settings in the 'Settings' Gnome App, as there are many op
 **GNOME Appearance**
 --------------------
 
-![](images/vanila-desktop.png)
+![](/images/vanila-desktop.png)
 
 > The Vanilla appearance of Gnome 44 desktop
 
@@ -288,11 +288,11 @@ Gnome is one of the two most popular Linux user environments, and it is known fo
 * Desktop Icons NG (DING)
 * AppIndicator and KStatusNotifierItem Support
 
-![](images/desktop-01.png)
+![](/images/desktop-01.png)
 
 > A customized version with a Windows-like look and feel
 
-![](images/desktop-02.png)
+![](/images/desktop-02.png)
 
 > Dash to Panel, ArcMenu, Desktop Icons NG and LibreOffice with tabbed user interface
 
@@ -305,13 +305,13 @@ In this section, I'll go over some extra settings and apps that aren't strictly 
 
 To begin, make sure that you have the required packages installed on your system. Most systems already have these packages, but you can install them by running the following command in the terminal:
 
-```text-plain
+```bash
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 ```
 
 Once you have the required packages, you can proceed to download and install the Microsoft Core Fonts package. Simply run the following command in the terminal:
 
-```text-plain
+```bash
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
@@ -325,11 +325,11 @@ Choosing a web browser is a personal decision that depends on individual prefere
 
 Go to Vivaldi website and download, then install the RPM package, or do the following:
 
-```text-plain
+```bash
 wget https://downloads.vivaldi.com/stable/vivaldi-stable-5.7.2921.65-1.x86_64.rpm
 ```
 
-```text-plain
+```bash
 sudo apt install ./vivaldi-stable-5.7.2921.65-1.x86_64.rpm
 ```
 
@@ -345,11 +345,11 @@ The Tor network is a free and open-source software that enables anonymous commun
 
 Let's install the Tor network:
 
-```text-plain
+```bash
 sudo dnf install tor
 ```
 
-```text-plain
+```bash
 sudo systemctl enable --now tor
 ```
 
@@ -359,7 +359,7 @@ ZeroTier is a software-defined networking tool that allows users to create virtu
 
 To install ZeroTier, simply execute the command below:
 
-```text-plain
+```bash
 curl -s https://install.zerotier.com | sudo bash
 ```
 
@@ -375,11 +375,11 @@ To manage a virtual network with over 25 devices, it is recommended to install t
 
 Tabby is an infinitely customizable cross-platform terminal app for local shells, serial, SSH and Telnet connections. You can download the latest release from: [github.com/Eugeny/tabby/releases](https://github.com/Eugeny/tabby/releases)
 
-```text-plain
+```bash
 wget https://github.com/Eugeny/tabby/releases/download/v1.0.196/tabby-1.0.196-linux-x64.rpm
 ```
 
-```text-plain
+```bash
 sudo dnf install ./tabby-1.0.196-linux-x64.rpm
 ```
 
@@ -389,11 +389,11 @@ _At the time of writing, version v1.0.196 is the latest release._
 
 NoMachine is a remote desktop software that allows users to access and control their computer or server from anywhere, using any device. It offers a secure and high-performance remote desktop experience with features such as file transfer, screen sharing, and virtual desktops. NoMachine supports various platforms including Windows, Linux, macOS, Android, and iOS.
 
-```text-plain
+```bash
 wget https://download.nomachine.com/download/8.4/Linux/nomachine_8.4.2_1_x86_64.rpm    
 ```
 
-```text-plain
+```bash
 sudo dnf install ./nomachine_8.4.2_1_x86_64.rpm
 ```
 
@@ -405,17 +405,17 @@ Waydroid is a compatibility layer that enables running Android applications nati
 
 Waydroid can be installed from the official package repository.
 
-```text-plain
+```bash
 sudo dnf install waydroid
 ```
 
-```text-plain
+```bash
 sudo systemctl enable --now waydroid-container
 ```
 
 After installing, launch Waydroid from the applications menu and proceed with the initialization by pasting these URLs in the OTA fields:
 
-![](images/waydroid.png)
+![](/images/waydroid.png)
 
 System OTA: `https://ota.waydro.id/system`
 
@@ -446,7 +446,7 @@ https://fedoramagazine.org/fish-a-friendly-interactive-shell/
 
 Download the latest release of the software, which at the time of writing is version v1.7.4-1.
 
-```text-plain
+```bash
 # wget https://github.com/sparrowwallet/sparrow/releases/download/1.7.4/sparrow-1.7.4-1.x86_64.rpm
 
 # sudo dnf install ./sparrow-1.7.4-1.x86_64.rpm
@@ -479,34 +479,34 @@ Enabling SSH over Tor involves configuring Tor to listen on a specific port and 
 1. Install Tor and OpenSSH on the server.
 2. Edit the Tor configuration file `/etc/tor/torrc` to add the following lines:
 
-```text-plain
+```bash
 HiddenServiceDir /var/lib/tor/ssh/
 HiddenServicePort 22 127.0.0.1:22
 ```
 
 This configures Tor to listen on port 22 on the local machine and forward traffic to that port to an onion service hosted on Tor. 3. Restart Tor to apply the changes
 
-```text-plain
+```bash
 sudo systemctl restart tor
 ```
 
 1. Retrieve the hostname and private key of the newly generated onion service by looking at the file `/var/lib/tor/ssh/hostname`.
 2. Edit the SSH configuration file (/etc/ssh/sshd\_config) to add the following lines:
 
-```text-plain
+```bash
 ListenAddress 127.0.0.1
 Port 22
 ```
 
 This configures SSH to listen on port 22 on the local machine. 6. Restart the SSH daemon to apply the changes
 
-```text-plain
+```bash
 sudo systemctl restart sshd
 ```
 
 1. Connect to the server using the onion address and the private key. For example, if the onion address is abc123.onion and the private key is stored in id\_ed25519, use the following command:
 
-```text-plain
+```bash
 ssh -i /path/to/id_ed25519 user@abc123.onion
 ```
 
