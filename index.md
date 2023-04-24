@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: Home
 nav_order: 1
@@ -10,7 +9,7 @@ has_children: false
 ![](/images/aristotle.png)
 
 > “Educating the mind without educating the heart is no education at all.”
->
+> 
 > *― Aristotle* 
 
 ### Welcome to my journal-documentation!
